@@ -5,8 +5,11 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './confirm-delete-modal.component.html',
-  styleUrl: './confirm-delete-modal.component.scss'
+  styleUrl: './confirm-delete-modal.component.scss',
 })
 export class ConfirmDeleteModalComponent {
-
+  display = 'none';
+  hideModal() {
+    this.display === 'block' ? 'none' : 'block';
+  }
 }

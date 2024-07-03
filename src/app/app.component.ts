@@ -6,10 +6,8 @@ import { ConfirmDeleteModalComponent } from './components/confirm-delete-modal/c
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ToolbarComponent,ConfirmDeleteModalComponent],
+  imports: [RouterOutlet, ToolbarComponent, ConfirmDeleteModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  buttonName = 'Save Changes';
-}
+export class AppComponent {}

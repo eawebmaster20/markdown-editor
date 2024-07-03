@@ -1,4 +1,4 @@
-<div class="del-modal">
+<div class="del-modal" [style]="{ display }">
   <h4>Delete this document?</h4>
   <p>
     Are you sure you want to delete the ‘welcome.md’ document and its contents?
@@ -6,4 +6,4 @@
   </p>
   <button id="btn-con-del">Confirm & Delete</button>
 </div>
-<div class="lightbox"></div>
+<div (click)="hideModal()" class="lightbox" [style]="{ display }"></div>
