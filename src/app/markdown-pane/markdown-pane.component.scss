@@ -1,0 +1,51 @@
+
+.main-pages{
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    color: var(--slate-500);
+    background: var(--slate-100);
+}
+
+.markdown-bar{
+    display: flex;
+    width: 100%;
+    height: 42px;
+    align-items: center;
+    background: var(--slate-200);
+    font-family: Roboto, 'Sans-serif';
+    padding: 0 20px;
+}
+
+.markdown-bar p{
+    letter-spacing: 3px;
+    font-weight: 500;
+    color: var(--slate-500);
+    font-family: Roboto, 'Sans-serif'
+}
+
+.markdown-page{
+    width: 100%;
+    height: 85vh;
+    /* background: blue; */
+}
+
+.markdown-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.content{
+    font-family: 'Roboto mono', 'Sans-serif';
+    color: var(--slate-700);
+    font-size: 12px;
+    width: 100%;
+    max-width: 672px;
+    height: 100%;
+    letter-spacing: 0px;
+    padding: 10px 20px;
+    border: none;
+}
