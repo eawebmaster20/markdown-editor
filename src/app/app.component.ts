@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { EditorPreviewComponent } from './components/editor-preview/editor-preview.component';
+import { PreviewComponent } from './components/preview/preview.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,EditorPreviewComponent],
+  imports: [RouterOutlet,PreviewComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  
+
 }
