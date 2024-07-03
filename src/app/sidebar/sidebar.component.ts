@@ -1,5 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 
+interface DocumentType {
+  [key: string]: string;
+}
 
 @Component({
   selector: 'app-sidebar',
@@ -11,6 +14,15 @@ import { Component,OnInit } from '@angular/core';
 
 
 export class SidebarComponent {
-  
+  document: DocumentType[] =[ 
+    {
+      time: '01 April 2022',
+      title: 'untitled-document.md',
+    },
+    {
+      time: '01 April 2022',
+      title: 'welcome.md',
+    },
+  ]
 
 }
