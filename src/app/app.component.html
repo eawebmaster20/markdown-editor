@@ -1,6 +1,8 @@
 <main class="main">
-  <div class="content"><app-markdown-pane></app-markdown-pane></div>
-  
+  <div class="toolbar-sidebar">
+    <app-sidebar />
+    <app-toolbar />
+  </div>
+  <app-markdown-pane/>
+  <app-confirm-delete-modal />
 </main>
-
-<router-outlet />
