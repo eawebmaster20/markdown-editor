@@ -1,15 +1,13 @@
-@import '../../styles.scss';
-
 aside {
-  width: 19%;
+  width: 250px;
   min-height: 100vh;
-  background-color: var(--slate-1000);
+  background-color: var(--slate-900);
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
   row-gap: 1.75rem;
 
-  h3{
+  .heading {
     color: var(--slate-500);
     font-weight: 500;
     letter-spacing: 0.125rem;
@@ -32,21 +30,21 @@ aside {
     transition: background-color 0.3s ease-in-out;
   }
 
-  button:hover{
+  button:hover {
     background-color: var(--orange-hover);
   }
 
-  .first-section{
+  .first-section {
     display: flex;
     flex-direction: column;
     row-gap: 1.75rem;
   }
 
-  #file-list{
-      list-style-type: none;
-      display: flex;
-      flex-direction: column;
-      row-gap: 1.25rem;  
+  #file-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
 
     div {
       width: 100%;
@@ -55,18 +53,21 @@ aside {
       gap: 1rem;
     }
 
-    li{
+    li {
       display: flex;
       flex-direction: column;
       row-gap: 0.125rem;
 
-      p{
+      p {
         color: var(--slate-500);
         font-size: 0.8125rem;
+        margin: 0 0 3px 0;
+        font-weight: 100;
       }
-      h3{
+      h3 {
         color: var(--slate-100);
         font-size: 0.9375rem;
+        font-weight: 400;
       }
     }
   }

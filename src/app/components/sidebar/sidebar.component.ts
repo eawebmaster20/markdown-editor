@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-
-
 interface DocumentType {
   [key: string]: string;
 }
@@ -11,12 +9,10 @@ interface DocumentType {
   standalone: true,
   imports: [],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+  styleUrl: './sidebar.component.scss',
 })
-
-
 export class SidebarComponent {
-  files: DocumentType[] =[ 
+  files: DocumentType[] = [
     {
       time: '01 April 2022',
       title: 'untitled-document.md',
@@ -25,6 +21,5 @@ export class SidebarComponent {
       time: '01 April 2022',
       title: 'welcome.md',
     },
-  ]
-
+  ];
 }
