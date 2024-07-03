@@ -1,4 +1,6 @@
-import { Component,OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+
 
 interface DocumentType {
   [key: string]: string;
@@ -14,7 +16,7 @@ interface DocumentType {
 
 
 export class SidebarComponent {
-  document: DocumentType[] =[ 
+  files: DocumentType[] =[ 
     {
       time: '01 April 2022',
       title: 'untitled-document.md',

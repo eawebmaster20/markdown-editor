@@ -29,5 +29,45 @@ aside {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  button:hover{
+    background-color: var(--orange-hover);
+  }
+
+  .first-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.75rem;
+  }
+
+  #file-list{
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1.25rem;  
+
+    div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    li{
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.125rem;
+
+      p{
+        color: var(--slate-500);
+        font-size: 0.8125rem;
+      }
+      h3{
+        color: var(--slate-100);
+        font-size: 0.9375rem;
+      }
+    }
   }
 }
