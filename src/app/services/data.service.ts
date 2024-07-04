@@ -10,10 +10,6 @@ export class DataService {
   };
   updateText() {
     this.Markdown.renderedText = marked.parse(this.Markdown.text);
-    // hljs.highlightBlock(txt);const code = ;
-    // this.Markdown.renderedText= Prism.highlight(marked.parse(`var data = 1;`).toString(), Prism.languages['javascript'], 'javascript');
-
-    // document.querySelectorAll('pre code').forEach((block) => hljs.highlightBlock(txt));
   }
   constructor() {}
 }
