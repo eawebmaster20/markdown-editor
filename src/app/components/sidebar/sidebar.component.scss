@@ -8,6 +8,7 @@ aside {
   flex-direction: column;
   row-gap: 1.75rem;
   // border: solid 1px red;
+  position: relative;
 
   .heading {
     color: var(--slate-500);
@@ -73,4 +74,11 @@ aside {
       }
     }
   }
+}
+
+app-theme-toggler {
+  // display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 24px;
 }
