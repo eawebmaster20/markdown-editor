@@ -1,4 +1,7 @@
-<div class="del-modal" [style]="{ display }">
+<div
+  class="del-modal"
+  [style]="{ display: modalService.isOpened ? 'block' : 'none' }"
+>
   <h4>Delete this document?</h4>
   <p>
     Are you sure you want to delete the ‘welcome.md’ document and its contents?
@@ -6,4 +9,8 @@
   </p>
   <button id="btn-con-del">Confirm & Delete</button>
 </div>
-<div (click)="hideModal()" class="lightbox" [style]="{ display }"></div>
+<div
+  (click)="modalService.hideModal()"
+  class="lightbox"
+  [style]="{ display: modalService.isOpened ? 'block' : 'none' }"
+></div>

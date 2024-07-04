@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-confirm-delete-modal',
@@ -8,7 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './confirm-delete-modal.component.scss',
 })
 export class ConfirmDeleteModalComponent {
+  modalService = inject(ModalService);
   display = 'none';
+
   hideModal() {
     this.display === 'block' ? 'none' : 'block';
   }
