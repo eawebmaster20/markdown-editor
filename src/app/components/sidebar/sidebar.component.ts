@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ThemeTogglerComponent } from '../theme-toggler/theme-toggler.component';
 import { DocumentsService } from '../../services/documents.service';
+import { SidebarService } from '../../services/sidebar.service';
 
 interface Document {
   createdAt: string;
@@ -16,16 +17,8 @@ interface Document {
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  // files: DocumentType[] = [
-  //   {
-  //     time: '01 April 2022',
-  //     title: 'untitled-document.md',
-  //   },
-  //   {
-  //     time: '01 April 2022',
-  //     title: 'welcome.md',
-  //   },
-  // ];
+  sidebarService = inject(SidebarService);
+
   documents: Document[] = [];
   documentsService = inject(DocumentsService);
 

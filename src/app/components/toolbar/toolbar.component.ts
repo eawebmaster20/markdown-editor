@@ -14,6 +14,10 @@ export class ToolbarComponent {
   modalService = inject(ModalService);
 
   constructor() {
-    // console.log(this.sidebarService.getSidebarStatus());
+    console.log(this.sidebarService.getSidebarStatus());
+  }
+
+  hamburgerClicked() {
+    console.log('Hamburger menu clicked!');
   }
 }

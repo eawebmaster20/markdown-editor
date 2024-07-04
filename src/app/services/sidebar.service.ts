@@ -7,7 +7,7 @@ export class SidebarService {
   isOpened = false;
 
   toggleSidebar() {
-    this.isOpened ? (this.isOpened = false) : (this.isOpened = true);
+    this.isOpened = !this.isOpened;
   }
 
   getSidebarStatus() {
