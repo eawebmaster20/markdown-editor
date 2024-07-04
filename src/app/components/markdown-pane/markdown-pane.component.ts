@@ -8,7 +8,7 @@ import { DataService } from '../../services/data.service';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './markdown-pane.component.html',
-  styleUrl: './markdown-pane.component.scss'
+  styleUrl: './markdown-pane.component.scss',
 })
 export class MarkdownPaneComponent {
   http = inject(HttpClient);
