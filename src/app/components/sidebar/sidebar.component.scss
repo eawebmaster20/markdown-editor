@@ -55,6 +55,11 @@ aside {
       display: flex;
       align-items: center;
       gap: 1rem;
+      cursor: pointer;
+    }
+
+    div:hover li h3 {
+      color: var(--orange-accent);
     }
 
     li {
@@ -72,6 +77,7 @@ aside {
         color: var(--slate-100);
         font-size: 0.9375rem;
         font-weight: 400;
+        transition: color 0.2s ease-in;
       }
     }
   }
@@ -82,12 +88,4 @@ app-theme-toggler {
   position: absolute;
   bottom: 10px;
   left: 24px;
-}
-
-.document {
-  cursor: pointer;
-}
-
-.document:hover h3.doc-name {
-  color: var(--orange-accent);
 }
