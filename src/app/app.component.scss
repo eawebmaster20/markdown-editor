@@ -1,0 +1,17 @@
+.main {
+  height: 100%;
+  position: relative;
+}
+
+.toolbar-sidebar {
+  display: flex;
+  width: 100%;
+}
+
+app-sidebar {
+  flex: 0 0 auto;
+}
+
+app-toolbar {
+  flex: 1 1 auto;
+}
