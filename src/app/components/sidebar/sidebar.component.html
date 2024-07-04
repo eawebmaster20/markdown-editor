@@ -1,16 +1,15 @@
 <aside [style]="{ display: sidebarService.isOpened ? 'block' : 'none' }">
   <h3 class="heading">MY DOCUMENTS</h3>
   <div class="first-section">
-    <button class="">
-      <span>+</span>
-      <p>New Document</p>
+    <button class="new-document">
+      <p>+ New Document</p>
     </button>
 
     <!-- document list goes here -->
     <ul id="file-list">
       @if (documents.length > 0) { @for(document of documents; track
       document.name){
-      <div>
+      <div class="document" (click)="handleDocumentClick(document)">
         <svg
           width="14"
           height="16"
@@ -28,7 +27,7 @@
 
         <li>
           <p>{{ document.createdAt }}</p>
-          <h3>{{ document.name }}</h3>
+          <h3 class="doc-name">{{ document.name }}</h3>
         </li>
       </div>
       } }

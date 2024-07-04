@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
 import { ModalService } from '../../services/modal.service';
+import { CurrentDocumentService } from '../../services/current-document.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,12 +13,7 @@ import { ModalService } from '../../services/modal.service';
 export class ToolbarComponent {
   sidebarService = inject(SidebarService);
   modalService = inject(ModalService);
+  currDocService = inject(CurrentDocumentService);
 
-  constructor() {
-    console.log(this.sidebarService.getSidebarStatus());
-  }
-
-  hamburgerClicked() {
-    console.log('Hamburger menu clicked!');
-  }
+  constructor() {}
 }

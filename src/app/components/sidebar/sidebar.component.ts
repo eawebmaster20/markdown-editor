@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ThemeTogglerComponent } from '../theme-toggler/theme-toggler.component';
 import { DocumentsService } from '../../services/documents.service';
 import { SidebarService } from '../../services/sidebar.service';
+import { CurrentDocumentService } from '../../services/current-document.service';
 
 interface Document {
   createdAt: string;
@@ -18,6 +19,7 @@ interface Document {
 })
 export class SidebarComponent {
   sidebarService = inject(SidebarService);
+  currDocService = inject(CurrentDocumentService);
 
   documents: Document[] = [];
   documentsService = inject(DocumentsService);
@@ -26,5 +28,9 @@ export class SidebarComponent {
     this.documentsService
       .getDocuments()
       .subscribe((data) => (this.documents = data));
+  }
+
+  handleDocumentClick(document: Document) {
+    this.currDocService.setCurrDocument(document);
   }
 }

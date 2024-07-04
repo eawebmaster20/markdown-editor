@@ -34,7 +34,10 @@
       </svg>
       <div>
         <p>Document Name</p>
-        <h5>welcome.md</h5>
+        @if (currDocService.currDocument.name) {
+
+        <h5>{{ currDocService.currDocument.name }}</h5>
+        }
       </div>
     </div>
   </div>
