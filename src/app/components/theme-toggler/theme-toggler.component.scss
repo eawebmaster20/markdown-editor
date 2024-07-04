@@ -46,20 +46,24 @@ svg {
     position: absolute;
     top: -9px;
     width: 18px;
+    transition: 0.9s;
 }
 
 svg.sun {
     left: 80px;
     fill: #5A6069;
+    
 }
 
 svg.moon {
     left: 1px;
     fill: #fff;
+    
 }
 
 input:checked ~ svg.sun {
     fill: #fff;
+
 }
 
 input:checked ~ svg.moon {
