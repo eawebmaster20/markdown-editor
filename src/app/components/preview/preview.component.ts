@@ -6,8 +6,12 @@ import { DataService } from '../../services/data.service';
   standalone: true,
   imports: [],
   templateUrl: './preview.component.html',
-  styleUrl: './preview.component.scss'
+  styleUrl: './preview.component.scss',
 })
 export class PreviewComponent {
-  constructor(public dataService:DataService){}
+  constructor(public dataService: DataService) {}
+
+  ngOnInit() {
+    this.dataService.updateText();
+  }
 }

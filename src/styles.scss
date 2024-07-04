@@ -23,41 +23,46 @@
 body {
   font-family: "Roboto", sans-serif;
   position: relative;
-  height: 100vh;
+  height: 100%;
+  // overflow: hidden;
 }
 
 input {
   font-family: "Roboto Mono", monospace;
 }
-.preview{
+.preview {
   color: var(--slate-500);
   font-size: 14px;
-  blockquote{
-      background-color: var(--orange-accent);
-      border-radius: 5px;
-      p{
-        background-color: var(--slate-300);
-        margin-left: 3px;
-        padding: 0.8rem;
-      }
+  blockquote {
+    background-color: var(--orange-accent);
+    border-radius: 5px;
+    p {
+      background-color: var(--slate-300);
+      margin-left: 3px;
+      padding: 0.8rem;
     }
-    pre {
-      padding: 10px;
-      background-color: var(--slate-200);
-      border-radius: 4px;
-    }
-    h1,h2,h3,h4{
-      margin: 0.5rem 0 1rem;
-      color: var(--slate-700);
-    }
-    h1{
-      font-family: "Roboto Slab", serif;
-      font-size: 32px
-    }
-    h2{
-      font-weight: 300;
-    }
-    ol, ul {
-      margin-left: 2rem;
-    }
+  }
+  pre {
+    padding: 10px;
+    background-color: var(--slate-200);
+    border-radius: 4px;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0.5rem 0 1rem;
+    color: var(--slate-700);
+  }
+  h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 32px;
+  }
+  h2 {
+    font-weight: 300;
+  }
+  ol,
+  ul {
+    margin-left: 2rem;
+  }
 }
