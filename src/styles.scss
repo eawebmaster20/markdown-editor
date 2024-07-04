@@ -20,6 +20,11 @@
   --orange-hover: #f39765;
 }
 
+html,
+body {
+  overflow: hidden;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   position: relative;
