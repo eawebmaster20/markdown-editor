@@ -1,8 +1,11 @@
 <main class="main">
-  <div class="toolbar-sidebar">
-    <app-sidebar />
+  <app-sidebar />
+  <div class="main-content">
     <app-toolbar />
+    <div class="text-content">
+      <app-markdown-pane />
+      <app-preview />
+    </div>
   </div>
-  <app-markdown-pane/>
   <app-confirm-delete-modal />
 </main>

@@ -1,7 +1,7 @@
 <nav>
   <div class="left-container">
-    <button (click)="toggleSidebar()" class="h-icon">
-      @if (isOpened) {
+    <button (click)="sidebarService.toggleSidebar()" class="h-icon">
+      @if (sidebarService.isOpened) {
       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
         <g fill="#FFF" fill-rule="evenodd">
           <path d="M2.1.686 23.315 21.9l-1.415 1.415L.686 2.1z" />

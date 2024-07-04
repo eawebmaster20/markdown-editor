@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,9 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './toolbar.component.scss',
 })
 export class ToolbarComponent {
-  isOpened = false;
+  sidebarService = inject(SidebarService);
 
-  toggleSidebar() {
-    this.isOpened ? (this.isOpened = false) : (this.isOpened = true);
+  constructor() {
+    console.log(this.sidebarService.getSidebarStatus());
   }
 }
