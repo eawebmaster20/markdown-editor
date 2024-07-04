@@ -4,8 +4,6 @@
     </div>
     <div class="markdown-page">
         <div class="markdown-content">
-            <textarea class="content">
-                {{ textBoxData }}
-            </textarea>
+            <textarea [(ngModel)]="dataService.Markdown.text" class="content"></textarea>
         </div>
     </div>
