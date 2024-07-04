@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MarkdownPaneComponent } from './markdown-pane/markdown-pane.component'
+import { MarkdownPaneComponent } from './components/markdown-pane/markdown-pane.component'
 
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
