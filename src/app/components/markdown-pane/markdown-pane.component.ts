@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { DataService } from '../../services/data.service';
 import { DocumentsService } from '../../services/documents.service';
 import { PreviewTogglerService } from '../../services/preview-toggler.service';
+import { CurrentDocumentService } from '../../services/current-document.service';
+import { DocumentIterface } from '../interfaces/document';
 
 @Component({
   selector: 'app-markdown-pane',
@@ -13,18 +13,18 @@ import { PreviewTogglerService } from '../../services/preview-toggler.service';
   styleUrl: './markdown-pane.component.scss',
 })
 export class MarkdownPaneComponent {
-  // textBoxData = ``;
-  // http = inject(HttpClient);
   documentService = inject(DocumentsService);
+  
   dataService = inject(DataService);
   toggleService = inject(PreviewTogglerService)
 
+  currDocService = inject(CurrentDocumentService);
+
   ngOnInit() {
-    console.log("somethig")
+    console.log('somethig');
     this.documentService.getDocuments().subscribe((data) => {
-      this.dataService.markdown.text = data[1].content;
-      this.dataService.updateText();
-      console.log(data[1].content)
+      this.currDocService.currDocument = data[1];
+      this.currDocService.updateText();
     })
   }
 }
