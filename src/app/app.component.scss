@@ -24,15 +24,16 @@ app-toolbar {
 .text-content {
   display: flex;
   height: 100%;
+  justify-content: center;
 }
 
-app-markdown-pane {
+.app-markdown-pane {
   // flex-grow: 1;
   width: 100%;
   max-width: 672px;
 }
 
-app-preview {
+.app-preview {
   // flex-grow: 1;
-  width: 100%;
+  width: 100%; 
 }
