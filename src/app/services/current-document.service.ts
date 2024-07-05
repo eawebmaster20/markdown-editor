@@ -19,8 +19,14 @@ export class CurrentDocumentService {
       this.currDocument = data[1];
     });
   }
+  getCurrDocument(){
+    return this.currDocument;
+  }
 
   setCurrDocument(document: Document) {
     this.currDocument = document;
+  }
+  deleteCurrDocument() {
+    this.documents = this.documents.filter((doc) => doc.name!== this.currDocument.name);
   }
 }
