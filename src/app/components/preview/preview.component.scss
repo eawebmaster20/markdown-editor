@@ -23,14 +23,16 @@
 
 .preview {
   // padding: 22px 23px;
-  padding: 10px 20px;
+  padding: 10px 20px 30px 20px;
 
   // border: solid 1px pink;
   height: 100%;
   // max-width: 672px;
   width: 100%;
   margin: 0 auto;
-  overflow: scroll;
+  overflow-y: scroll;
+  max-height: 84vh;
+  // background: blue;
 }
 
 .preview-bar {
