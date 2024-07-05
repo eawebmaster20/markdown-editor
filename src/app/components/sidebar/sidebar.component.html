@@ -1,14 +1,14 @@
 <aside [style]="{ display: sidebarService.isOpened ? 'block' : 'none' }">
   <h3 class="heading">MY DOCUMENTS</h3>
   <div class="first-section">
-    <button class="new-document">
+    <button class="new-document" (click)="createModalService.displayModal()">
       <p>+ New Document</p>
     </button>
 
     <!-- document list goes here -->
     <ul id="file-list">
-      @if (currDocService.documents) { @for(document of currDocService.documents; track
-      document){
+      @if (documents.length > 0) { @for(document of documents; track
+      document.name){
       <div class="document" (click)="handleDocumentClick(document)">
         <svg
           width="14"
@@ -26,7 +26,7 @@
         </svg>
 
         <li>
-          <p>{{ currDocService.currDocument.createdAt }}</p>
+          <p>{{ document.createdAt }}</p>
           <h3 class="doc-name">{{ document.name }}</h3>
         </li>
       </div>
