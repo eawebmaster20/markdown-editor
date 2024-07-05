@@ -43,6 +43,7 @@ input {
 .preview {
   color: var(--slate-500);
   font-size: 14px;
+  outline: none;
 
   *{
     line-height: 25px;
@@ -140,3 +141,29 @@ input {
     margin-bottom: 1rem;
   }
 }
+
+.d-none {
+  display: none; 
+}
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ .preview::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.preview {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ .content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.content {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
