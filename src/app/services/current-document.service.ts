@@ -20,10 +20,10 @@ export class CurrentDocumentService {
   constructor(private http: HttpClient) {
     this.http.get<any>('../../assets/data.json').subscribe((data) => {
       this.documents = data;
-      this.currDocument = data[1];
+      // this.currDocument = data[1];
     });
   }
-  getCurrDocument(){
+  getCurrDocument() {
     return this.currDocument;
   }
 
@@ -31,6 +31,8 @@ export class CurrentDocumentService {
     this.currDocument = document;
   }
   deleteCurrDocument() {
-    this.documents = this.documents.filter((doc) => doc.name!== this.currDocument.name);
+    this.documents = this.documents.filter(
+      (doc) => doc.name !== this.currDocument.name
+    );
   }
 }

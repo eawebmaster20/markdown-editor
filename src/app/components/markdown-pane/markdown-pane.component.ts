@@ -23,11 +23,11 @@ export class MarkdownPaneComponent {
   //   });
   // }
   ngOnInit() {
-    console.log("somethig")
+    console.log('somethig');
     this.documentService.getDocuments().subscribe((data) => {
       this.dataService.markdown.text = data[1].content;
       this.dataService.updateText();
-      console.log(data[1].content)
-    })
+      // console.log(data[1].content)
+    });
   }
 }
