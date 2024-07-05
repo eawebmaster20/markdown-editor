@@ -12,7 +12,11 @@ interface Document {
 })
 export class CurrentDocumentService {
   documents: Document[] = [];
-  currDocument = this.documents[0];
+  currDocument = {
+    createdAt: '',
+    name: '',
+    content: '',
+  };
   constructor(private http: HttpClient) {
     this.http.get<any>('../../assets/data.json').subscribe((data) => {
       this.documents = data;
