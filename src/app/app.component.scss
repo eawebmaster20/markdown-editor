@@ -27,9 +27,12 @@ app-toolbar {
 }
 
 app-markdown-pane {
-  flex-grow: 1;
+  // flex-grow: 1;
+  width: 100%;
+  max-width: 672px;
 }
 
 app-preview {
-  flex-grow: 1;
+  // flex-grow: 1;
+  width: 100%;
 }

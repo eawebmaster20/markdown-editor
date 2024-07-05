@@ -1,6 +1,7 @@
 .preview-container {
   border-left: solid 1px var(--slate-300);
   height: 100%;
+  // width: 100%;
 }
 
 .markdown-bar {
@@ -21,7 +22,15 @@
 }
 
 .preview {
-  padding: 22px 23px;
+  // padding: 22px 23px;
+  padding: 10px 20px;
+
+  // border: solid 1px pink;
+  height: 100%;
+  // max-width: 672px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: scroll;
 }
 
 .preview-bar {
