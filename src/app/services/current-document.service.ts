@@ -1,36 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-interface Document {
-  createdAt: string;
-  name: string;
-  content: string;
-}
+import { marked } from 'marked';
+import { DocumentIterface } from '../components/interfaces/document';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CurrentDocumentService {
-  documents: Document[] = [];
-  currDocument = {
-    createdAt: '',
-    name: '',
-    content: '',
-  };
-  constructor(private http: HttpClient) {
-    this.http.get<any>('../../assets/data.json').subscribe((data) => {
-      this.documents = data;
-      this.currDocument = data[1];
-    });
+  documents: DocumentIterface[] = [];
+  currDocument:DocumentIterface = {name:'',content:"",renderedText:marked.parse(''),createdAt:""};
+  constructor() {
   }
-  getCurrDocument(){
-    return this.currDocument;
+  updateText() {
+    this.currDocument.renderedText = marked.parse(this.currDocument.content);
   }
+  setCurrDocument(document: DocumentIterface) {
 
-  setCurrDocument(document: Document) {
     this.currDocument = document;
+    this.updateText()
   }
   deleteCurrDocument() {
-    this.documents = this.documents.filter((doc) => doc.name!== this.currDocument.name);
+    this.documents = this.documents.filter(
+      (doc) => doc.name !== this.currDocument.name
+    );
   }
 }
