@@ -20,6 +20,11 @@
   --orange-hover: #f39765;
 }
 
+
+.dark-theme {
+  background-color: var(--slate-1000);
+  color: var(--slate-400);
+}
 html,
 body {
   overflow: hidden;
