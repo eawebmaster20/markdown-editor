@@ -3,6 +3,7 @@ import { ThemeTogglerComponent } from '../theme-toggler/theme-toggler.component'
 import { DocumentsService } from '../../services/documents.service';
 import { SidebarService } from '../../services/sidebar.service';
 import { CurrentDocumentService } from '../../services/current-document.service';
+import { DataService } from '../../services/data.service';
 
 interface Document {
   createdAt: string;
@@ -20,6 +21,7 @@ interface Document {
 export class SidebarComponent {
   sidebarService = inject(SidebarService);
   currDocService = inject(CurrentDocumentService);
+  dataService = inject(DataService);
 
   documents: Document[] = [];
   documentsService = inject(DocumentsService);
@@ -32,5 +34,7 @@ export class SidebarComponent {
 
   handleDocumentClick(document: Document) {
     this.currDocService.setCurrDocument(document);
+    this.dataService.markdown.text=document.content;
+    this.dataService.updateText();
   }
 }
