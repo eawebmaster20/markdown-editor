@@ -15,7 +15,7 @@ export class MarkdownPaneComponent {
   documentService = inject(DocumentsService);
   currDocService = inject(CurrentDocumentService);
   ngOnInit() {
-    console.log("somethig")
+    console.log('somethig');
     this.documentService.getDocuments().subscribe((data) => {
       this.currDocService.currDocument = data[1];
       this.currDocService.updateText();

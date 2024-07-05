@@ -14,7 +14,13 @@ export class CurrentDocumentService {
     this.currDocument.renderedText = marked.parse(this.currDocument.content);
   }
   setCurrDocument(document: DocumentIterface) {
+
     this.currDocument = document;
     this.updateText()
+  }
+  deleteCurrDocument() {
+    this.documents = this.documents.filter(
+      (doc) => doc.name !== this.currDocument.name
+    );
   }
 }
