@@ -6,6 +6,16 @@ import { DocumentIterface } from '../components/interfaces/document';
   providedIn: 'root',
 })
 export class CurrentDocumentService {
+
+  documents: Document[] = [];
+  currDocument = this.documents[0];
+  inEditMode:boolean = false
+  constructor(private http: HttpClient) {
+    this.http.get<any>('../../assets/data.json').subscribe((data) => {
+      this.documents = data;
+      this.currDocument = data[1];
+    });
+
   documents: DocumentIterface[] = [];
   currDocument:DocumentIterface = {name:'',content:"",renderedText:marked.parse(''),createdAt:""};
   constructor() {
@@ -22,5 +32,15 @@ export class CurrentDocumentService {
     this.documents = this.documents.filter(
       (doc) => doc.name !== this.currDocument.name
     );
+  }
+  renameDoc(newName: any){
+    console.log(
+      newName.target.innerText
+      
+    )
+    this.currDocument.name= newName.target.innerText
+  }
+  editName(){
+    this.inEditMode = !this.inEditMode;
   }
 }
