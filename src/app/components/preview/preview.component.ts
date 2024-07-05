@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { CurrentDocumentService } from '../../services/current-document.service';
 
 @Component({
   selector: 'app-preview',
@@ -9,9 +9,9 @@ import { DataService } from '../../services/data.service';
   styleUrl: './preview.component.scss',
 })
 export class PreviewComponent {
-  constructor(public dataService: DataService) {}
+  constructor(public currDocService: CurrentDocumentService) {}
 
   ngOnInit() {
-    this.dataService.updateText();
+    // this.dataService.updateText();
   }
 }

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { transformDocuments } from './time-transformed'
 import { map } from 'rxjs/operators';
 import { IDocument } from './document-type';
+import { DocumentIterface } from '../components/interfaces/document';
 
 
 
@@ -16,6 +17,7 @@ export class DocumentsService {
   getDocuments() {
     return this.http.get<IDocument[]>('../../assets/data.json')
     .pipe(map(transformDocuments))
+    return this.http.get<DocumentIterface[]>('../../assets/data.json');
   }
 }
 

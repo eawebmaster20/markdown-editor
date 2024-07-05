@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { DocumentsService } from '../../services/documents.service';
+import { CurrentDocumentService } from '../../services/current-document.service';
+import { DocumentIterface } from '../interfaces/document';
 
 @Component({
   selector: 'app-markdown-pane',
@@ -10,12 +12,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './markdown-pane.component.scss',
 })
 export class MarkdownPaneComponent {
-  textBoxData = ``;
-  http = inject(HttpClient);
-
+  documentService = inject(DocumentsService);
+  currDocService = inject(CurrentDocumentService);
   ngOnInit() {
-    this.http.get<any>('../../assets/data.json').subscribe((data) => {
-      this.textBoxData = data[1].content;
-    });
+    console.log('somethig');
+    this.documentService.getDocuments().subscribe((data) => {
+      this.currDocService.currDocument = data[1];
+      this.currDocService.updateText();
+    })
   }
 }
