@@ -32,11 +32,15 @@
           fill="#FFF"
         />
       </svg>
-      <div>
+      <div (dblclick)="currDocService.editName()" class="edit-name">
         <p>Document Name</p>
         @if (currDocService.currDocument.name) {
-
-        <h5>{{ currDocService.currDocument.name }}</h5>
+          @if(!currDocService.inEditMode){
+            <h3 class="doc-name">{{ currDocService.currDocument.name }}</h3>
+          }
+          @else{
+            <input [(ngModel)]="currDocService.currDocument.name" type="text">
+          }
         }
       </div>
     </div>

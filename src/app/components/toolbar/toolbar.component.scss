@@ -53,6 +53,11 @@ nav {
   display: inline-block;
   background-color: var(--slate-600);
 }
+.edit-name{
+  border-left: 'none';
+  border-top: 'none';
+  border-right: 'none';
+}
 
 .right-container {
   display: flex;
