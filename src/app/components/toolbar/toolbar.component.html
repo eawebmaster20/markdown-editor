@@ -37,14 +37,14 @@
 
         @if (currDocService.currDocument.name) {
           @if(!currDocService.inEditMode){
-            <h3 class="doc-name">{{ currDocService.currDocument.name }}</h3>
+            <h5>{{ currDocService.currDocument.name }}</h5>   
           }
           @else{
             <input [(ngModel)]="currDocService.currDocument.name" type="text">
           }
-
+        }
         @defer () {
-        <h5>{{ currDocService.currDocument.name }}</h5>
+        <!-- <h5>{{ currDocService.currDocument.name }}</h5> -->
         }@placeholder {
           Loading...
 

@@ -15,9 +15,9 @@ export class DocumentsService {
   constructor(private http: HttpClient) {}
 
   getDocuments() {
-    return this.http.get<IDocument[]>('../../assets/data.json')
-    .pipe(map(transformDocuments))
-    return this.http.get<DocumentIterface[]>('../../assets/data.json');
+    return this.http.get<DocumentIterface[]>('../../assets/data.json')
+    // .pipe(map(transformDocuments))
+    // return this.http.get<DocumentIterface[]>('../../assets/data.json');
   }
 }
 

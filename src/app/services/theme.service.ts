@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
+
 export class ThemeService {
   private activeTheme: 'light-theme' | 'dark-theme';
 
@@ -11,6 +12,7 @@ export class ThemeService {
     const savedTheme = localStorage.getItem('theme');
     this.activeTheme = (savedTheme as 'light-theme' | 'dark-theme') || 'light-theme';
     document.body.className = this.activeTheme;
+    // document.querySelector('.')
   }
 
   setTheme(theme: 'light-theme' | 'dark-theme') {

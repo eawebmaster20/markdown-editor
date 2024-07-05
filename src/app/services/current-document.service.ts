@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { marked } from 'marked';
 import { DocumentIterface } from '../components/interfaces/document';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CurrentDocumentService {
 
-  documents: Document[] = [];
-  currDocument = this.documents[0];
+  documents: DocumentIterface[] = [];
+  // currDocument = this.documents[0];
   inEditMode:boolean = false
   constructor(private http: HttpClient) {
     this.http.get<any>('../../assets/data.json').subscribe((data) => {
       this.documents = data;
       this.currDocument = data[1];
-    });
+    })}
+    ;
 
-  documents: DocumentIterface[] = [];
   currDocument:DocumentIterface = {name:'',content:"",renderedText:marked.parse(''),createdAt:""};
-  constructor() {
-  }
+
   updateText() {
     this.currDocument.renderedText = marked.parse(this.currDocument.content);
   }
