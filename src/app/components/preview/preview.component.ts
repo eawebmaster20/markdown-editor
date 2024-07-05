@@ -12,6 +12,6 @@ export class PreviewComponent {
   constructor(public dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.updateText();
+    // this.dataService.updateText();
   }
 }

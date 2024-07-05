@@ -4,12 +4,12 @@ import { marked } from 'marked';
   providedIn: 'root',
 })
 export class DataService {
-  Markdown = {
+  markdown = {
     text: 'this is some text to preview',
     renderedText: marked.parse(''),
   };
   updateText() {
-    this.Markdown.renderedText = marked.parse(this.Markdown.text);
+    this.markdown.renderedText = marked.parse(this.markdown.text);
     // hljs.highlightBlock(txt);const code = ;
     // this.Markdown.renderedText= Prism.highlight(marked.parse(`var data = 1;`).toString(), Prism.languages['javascript'], 'javascript');
 
