@@ -1,14 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { ThemeTogglerComponent } from '../theme-toggler/theme-toggler.component';
 import { DocumentsService } from '../../services/documents.service';
 import { SidebarService } from '../../services/sidebar.service';
 import { CurrentDocumentService } from '../../services/current-document.service';
+import { ThemeTogglerComponent } from '../theme-toggler/theme-toggler.component';
+import { DocumentIterface } from '../interfaces/document';
 
-interface Document {
-  createdAt: string;
-  name: string;
-  content: string;
-}
 
 @Component({
   selector: 'app-sidebar',
@@ -21,7 +17,11 @@ export class SidebarComponent {
   sidebarService = inject(SidebarService);
   currDocService = inject(CurrentDocumentService);
 
+
   // documents: Document[] = [];
+
+  documents: DocumentIterface[] = [];
+
   documentsService = inject(DocumentsService);
 
   // ngOnInit() {
@@ -30,7 +30,7 @@ export class SidebarComponent {
   //     .subscribe((data) => (this.documents = data));
   // }
 
-  handleDocumentClick(document: Document) {
+  handleDocumentClick(document: DocumentIterface) {
     this.currDocService.setCurrDocument(document);
   }
 }

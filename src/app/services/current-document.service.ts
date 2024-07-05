@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
-interface Document {
-  createdAt: string;
-  name: string;
-  content: string;
-}
+import { marked } from 'marked';
+import { DocumentIterface } from '../components/interfaces/document';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CurrentDocumentService {
+
   documents: Document[] = [];
   currDocument = this.documents[0];
   inEditMode:boolean = false
@@ -19,16 +15,23 @@ export class CurrentDocumentService {
       this.documents = data;
       this.currDocument = data[1];
     });
-  }
-  getCurrDocument(){
-    return this.currDocument;
-  }
 
-  setCurrDocument(document: Document) {
+  documents: DocumentIterface[] = [];
+  currDocument:DocumentIterface = {name:'',content:"",renderedText:marked.parse(''),createdAt:""};
+  constructor() {
+  }
+  updateText() {
+    this.currDocument.renderedText = marked.parse(this.currDocument.content);
+  }
+  setCurrDocument(document: DocumentIterface) {
+
     this.currDocument = document;
+    this.updateText()
   }
   deleteCurrDocument() {
-    this.documents = this.documents.filter((doc) => doc.name!== this.currDocument.name);
+    this.documents = this.documents.filter(
+      (doc) => doc.name !== this.currDocument.name
+    );
   }
   renameDoc(newName: any){
     console.log(
