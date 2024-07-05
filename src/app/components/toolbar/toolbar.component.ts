@@ -17,4 +17,8 @@ export class ToolbarComponent {
   currDocService = inject(CurrentDocumentService);
 
   constructor() {}
+
+  saveChanges(): void {
+    this.currDocService.saveDocumentChange();
+  }
 }

@@ -22,6 +22,12 @@ export class MarkdownPaneComponent {
 
   ngOnInit() {
     console.log('somethig');
+    if (localStorage.getItem('currDoc')?.length) {
+      this.currDocService.documents = JSON.parse(localStorage.getItem('docList')||'');
+      this.currDocService.currDocument = this.currDocService.documents[1];
+      this.currDocService.updateText();
+      return;
+    }
     this.documentService.getDocuments().subscribe((data) => {
       this.currDocService.currDocument = data[1];
       this.currDocService.updateText();
