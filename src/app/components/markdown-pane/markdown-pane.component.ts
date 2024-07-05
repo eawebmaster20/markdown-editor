@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../../services/data.service';
 import { DocumentsService } from '../../services/documents.service';
+import { PreviewTogglerService } from '../../services/preview-toggler.service';
 
 @Component({
   selector: 'app-markdown-pane',
@@ -16,12 +17,8 @@ export class MarkdownPaneComponent {
   // http = inject(HttpClient);
   documentService = inject(DocumentsService);
   dataService = inject(DataService);
+  toggleService = inject(PreviewTogglerService)
 
-  // ngOnInit() {
-  //   this.http.get<any>('../../assets/data.json').subscribe((data) => {
-  //     this.textBoxData = data[1].content;
-  //   });
-  // }
   ngOnInit() {
     console.log("somethig")
     this.documentService.getDocuments().subscribe((data) => {
