@@ -1,11 +1,12 @@
 <main class="main">
-  <app-sidebar />
+    <app-sidebar />  
   <div class="main-content">
     <app-toolbar />
     <div class="text-content">
-      <app-markdown-pane />
-      <app-preview />
+      <app-markdown-pane [class]="toggleService.Visible? 'app-markdown-pane': ''" />
+      <app-preview class="app-preview" />
     </div>
   </div>
   <app-confirm-delete-modal />
+  <app-create-modal />
 </main>

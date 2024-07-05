@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DocumentsService } from '../../services/documents.service';
+import { PreviewTogglerService } from '../../services/preview-toggler.service';
 import { CurrentDocumentService } from '../../services/current-document.service';
 import { DocumentIterface } from '../interfaces/document';
 
@@ -13,7 +14,12 @@ import { DocumentIterface } from '../interfaces/document';
 })
 export class MarkdownPaneComponent {
   documentService = inject(DocumentsService);
+  
+  dataService = inject(DataService);
+  toggleService = inject(PreviewTogglerService)
+
   currDocService = inject(CurrentDocumentService);
+
   ngOnInit() {
     console.log('somethig');
     if (localStorage.getItem('currDoc')?.length) {

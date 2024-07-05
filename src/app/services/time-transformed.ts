@@ -1,4 +1,4 @@
-import { IDocument } from "./document-type";
+import { DocumentIterface } from '../components/interfaces/document';
 
 const formatDate = (dateString: string): string => {
     const [monthString, dayString, yearString] = dateString.split('-');
@@ -20,7 +20,7 @@ const formatDate = (dateString: string): string => {
     return `${dayVal.padStart(2, '0')} ${monthVal} ${yearVal}`;
 };;
   
-export const transformDocuments = (data: IDocument[]) =>
+export const transformDocuments = (data: DocumentIterface[]) =>
     data.map((document) => ({
       ...document,
       createdAt: formatDate(document.createdAt),
