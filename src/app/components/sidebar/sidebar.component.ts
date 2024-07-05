@@ -17,14 +17,18 @@ export class SidebarComponent {
   sidebarService = inject(SidebarService);
   currDocService = inject(CurrentDocumentService);
 
+
+  // documents: Document[] = [];
+
   documents: DocumentIterface[] = [];
+
   documentsService = inject(DocumentsService);
 
-  ngOnInit() {
-    this.documentsService
-      .getDocuments()
-      .subscribe((data) => (this.documents = data));
-  }
+  // ngOnInit() {
+  //   this.documentsService
+  //     .getDocuments()
+  //     .subscribe((data) => (this.documents = data));
+  // }
 
   handleDocumentClick(document: DocumentIterface) {
     this.currDocService.setCurrDocument(document);

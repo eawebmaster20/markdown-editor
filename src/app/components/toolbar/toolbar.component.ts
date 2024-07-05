@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { SidebarService } from '../../services/sidebar.service';
 import { ModalService } from '../../services/modal.service';
 import { CurrentDocumentService } from '../../services/current-document.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss',
 })
