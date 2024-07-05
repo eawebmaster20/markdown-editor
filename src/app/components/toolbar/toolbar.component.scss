@@ -53,10 +53,10 @@ nav {
   display: inline-block;
   background-color: var(--slate-600);
 }
-.edit-name{
-  border-left: 'none';
-  border-top: 'none';
-  border-right: 'none';
+.edit-name {
+  border-left: "none";
+  border-top: "none";
+  border-right: "none";
 }
 
 .right-container {
@@ -93,6 +93,16 @@ nav {
 }
 #btn-save:hover {
   background-color: var(--orange-hover);
+}
+
+.editing-input {
+  // border: solid 1px pink;
+  padding: 5px 0;
+  background-color: var(--slate-800);
+  color: var(--slate-100);
+  border: none;
+  outline: none;
+  border-bottom: solid 1px var(--slate-100);
 }
 
 @media only screen and (max-width: 600px) {

@@ -36,19 +36,17 @@
         <p>Document Name</p>
 
         @if (currDocService.currDocument.name) {
-          @if(!currDocService.inEditMode){
-            <h5>{{ currDocService.currDocument.name }}</h5>   
-          }
-          @else{
-            <input [(ngModel)]="currDocService.currDocument.name" type="text">
-          }
-        }
-        @defer () {
+        @if(!currDocService.inEditMode){
+        <h5>{{ currDocService.currDocument.name }}</h5>
+        } @else{
+        <input
+          class="editing-input"
+          [(ngModel)]="currDocService.currDocument.name"
+          type="text"
+        />
+        } } @defer () {
         <!-- <h5>{{ currDocService.currDocument.name }}</h5> -->
-        }@placeholder {
-          Loading...
-
-        }
+        }@placeholder { Loading... }
       </div>
     </div>
   </div>
