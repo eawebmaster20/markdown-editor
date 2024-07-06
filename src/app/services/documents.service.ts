@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { transformDocuments } from './time-transformed'
 import { map } from 'rxjs/operators';
 import { DocumentIterface } from '../components/interfaces/document';
+import { CurrentDocumentService } from './current-document.service';
 
 
 
@@ -19,24 +20,17 @@ export class DocumentsService {
     .pipe(map(transformDocuments))
   }
 
-  addDocument(newDocument: DocumentIterface) {
-    newDocument.createdAt = generateDate();
-    this.documents.push(newDocument);
-    this.getDocuments().subscribe(updatedDocuments => {
-      this.documents = updatedDocuments;
-    });
-  }
-}
 
-function generateDate(): string {
-  const date = new Date(Date.now()); 
-  const options: Intl.DateTimeFormatOptions = {
-    day: '2-digit', 
-    month: 'long', 
-    year: 'numeric',
-  };
-  const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
-  return formattedDate;
+  generateDate(): string {
+    const date = new Date(Date.now()); 
+    const options: Intl.DateTimeFormatOptions = {
+      day: '2-digit', 
+      month: 'long', 
+      year: 'numeric',
+    };
+    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+    return formattedDate;
+  }
 }
 
 
