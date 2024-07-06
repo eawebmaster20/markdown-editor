@@ -1,15 +1,14 @@
 
 import { Component, inject } from '@angular/core';
-import { DataService } from '../../services/data.service';
 import { PreviewTogglerService } from '../../services/preview-toggler.service';
-import { Component } from '@angular/core';
 import { CurrentDocumentService } from '../../services/current-document.service';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-preview',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './preview.component.html',
   styleUrl: './preview.component.scss',
 })
@@ -22,6 +21,8 @@ export class PreviewComponent {
 
   toggleService = inject(PreviewTogglerService)
   ngOnInit() {
+    console.log(this.currDocService.currDocument.renderedText);
+    
     // this.dataService.updateText();
   }
 }

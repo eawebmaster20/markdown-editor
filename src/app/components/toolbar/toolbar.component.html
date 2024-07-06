@@ -34,22 +34,6 @@
       </svg>
       <div (dblclick)="currDocService.editName()" class="edit-name">
         <p>Document Name</p>
-
-        @if (currDocService.currDocument.name) {
-
-          @if(!currDocService.inEditMode){
-            <h5>{{ currDocService.currDocument.name }}</h5>   
-          }
-          @else{
-            <input [(ngModel)]="currDocService.currDocument.name" type="text">
-          }
-        }
-        @defer () {
-        }@placeholder {
-          Loading...
-
-        }
-
         @if(!currDocService.inEditMode){
         <h5>{{ currDocService.currDocument.name }}</h5>
         } @else{
@@ -58,10 +42,10 @@
           [(ngModel)]="currDocService.currDocument.name"
           type="text"
         />
-        } } @defer () {
-        <!-- <h5>{{ currDocService.currDocument.name }}</h5> -->
-        }@placeholder { Loading... }
-
+        }
+        <!--  @defer () {
+        <h5>{{ currDocService.currDocument.name }}</h5>
+        }@placeholder { Loading... } -->
       </div>
     </div>
   </div>
