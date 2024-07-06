@@ -1,36 +1,30 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable, OnInit } from '@angular/core';
 import { marked } from 'marked';
 import { DocumentIterface } from '../components/interfaces/document';
-import { HttpClient } from '@angular/common/http';
+import { DocumentsService } from './documents.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CurrentDocumentService {
+export class CurrentDocumentService{
 
   documents: DocumentIterface[] = [];
   inEditMode:boolean = false
-  constructor(private http: HttpClient) {
-    this.http.get<any>('../../assets/data.json').subscribe((data) => {
-      this.documents = data;
-      this.currDocument = data[1];
-    })}
-    ;
-
+  documentService = inject(DocumentsService)
   currDocument:DocumentIterface = {name:'',content:"",renderedText:marked.parse(''),createdAt:""};
 
   updateText() {
     this.currDocument.renderedText = marked.parse(this.currDocument.content);
   }
   setCurrDocument(document: DocumentIterface) {
-    localStorage.setItem('currDoc', document.toString());
     this.currDocument = document;
     this.updateText()
   }
   deleteCurrDocument() {
-    this.documents = this.documents.filter(
-      (doc) => doc.name !== this.currDocument.name
-    );
+    this.documents.splice(this.documents.indexOf(this.currDocument), 1)
+    this.currDocument = this.documents[this.documents.length-1]
+    localStorage.setItem('docList', JSON.stringify(this.documents));
+    this.updateText();
   }
   renameDoc(newName: any){
     console.log(
@@ -44,9 +38,18 @@ export class CurrentDocumentService {
   }
 
  saveDocumentChange(){
-   localStorage.setItem('currDoc',this.currDocument.toString());
+  this.documents[this.documents.length -1] = this.currDocument
+  console.log((this.documents));
+   localStorage.setItem('docList',JSON.stringify(this.documents));
+   console.log(this.documents);
  }
 
-
+ addDocument(newDocument: DocumentIterface) {
+  newDocument.createdAt = this.documentService.generateDate();
+  this.documents.push(newDocument);
+  localStorage.setItem('docList', JSON.stringify(this.documents));
+  this.currDocument = this.documents[this.documents.length - 1]
+    this.updateText();
+}
 
 }
