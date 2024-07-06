@@ -13,16 +13,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './preview.component.scss',
 })
 export class PreviewComponent {
-  constructor(public currDocService: CurrentDocumentService) {}
+
+  toggleService = inject(PreviewTogglerService)
+  currDocService = inject(CurrentDocumentService)
+  constructor() {}
 
   toggleVisible() {
     this.toggleService.Visible = !this.toggleService.Visible; 
   }
 
-  toggleService = inject(PreviewTogglerService)
   ngOnInit() {
-    console.log(this.currDocService.currDocument.renderedText);
-    
-    // this.dataService.updateText();
   }
 }
