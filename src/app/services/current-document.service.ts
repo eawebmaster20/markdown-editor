@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 export class CurrentDocumentService {
 
   documents: DocumentIterface[] = [];
-  // currDocument = this.documents[0];
   inEditMode:boolean = false
   constructor(private http: HttpClient) {
     this.http.get<any>('../../assets/data.json').subscribe((data) => {
@@ -24,7 +23,7 @@ export class CurrentDocumentService {
     this.currDocument.renderedText = marked.parse(this.currDocument.content);
   }
   setCurrDocument(document: DocumentIterface) {
-
+    localStorage.setItem('currDoc', document.toString());
     this.currDocument = document;
     this.updateText()
   }
@@ -43,4 +42,11 @@ export class CurrentDocumentService {
   editName(){
     this.inEditMode = !this.inEditMode;
   }
+
+ saveDocumentChange(){
+   localStorage.setItem('currDoc',this.currDocument.toString());
+ }
+
+
+
 }
