@@ -32,6 +32,7 @@ export class CreateModalComponent {
       content:'',
       renderedText:''
     }
+    this.createModalService.hideModal()
   }
 
 
