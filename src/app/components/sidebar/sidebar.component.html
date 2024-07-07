@@ -7,7 +7,7 @@
 
     <!-- document list goes here -->
     <ul id="file-list">
-      @if (documents.length > 0) { @for(document of documents; track
+      @if (currDocService.documents) { @for(document of currDocService.documents; track
       document.name){
       <div class="document" (click)="handleDocumentClick(document)">
         <svg

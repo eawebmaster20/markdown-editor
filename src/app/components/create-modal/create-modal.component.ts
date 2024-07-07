@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { CreateModalService } from '../../services/create-modal.service';
 import { DocumentsService } from '../../services/documents.service';
 import { DocumentIterface } from '../interfaces/document';
+import { CurrentDocumentService } from '../../services/current-document.service';
 
 @Component({
   selector: 'app-create-modal',
@@ -14,23 +15,25 @@ import { DocumentIterface } from '../interfaces/document';
 
 export class CreateModalComponent {
   createModalService = inject(CreateModalService)
-  documentsService = inject(DocumentsService)
+  currDocService = inject(CurrentDocumentService)
 
   newDocument: DocumentIterface = {
     createdAt: '',
-    name: '',
+    name: 'untitled-document.md',
     content: '',
     renderedText: ''
   };
 
-  addDocument() {
-    this.documentsService.addDocument(this.newDocument);
+  createDocument() {
+    this.currDocService.addDocument(this.newDocument);
+    this.newDocument = {
+      createdAt : '',
+      name:'untitled-document.md',
+      content:'',
+      renderedText:''
+    }
+    this.createModalService.hideModal()
   }
 
-  createDocument(){
-    this.createModalService.hideModal()
-    this.addDocument()
-    console.log(this.newDocument)
-    this.newDocument.name=''
-  }
+
 }

@@ -20,14 +20,7 @@ export class SidebarComponent {
   currDocService = inject(CurrentDocumentService);
   createModalService = inject(CreateModalService)
 
-  documents: DocumentIterface[] = [];
-
-  documentsService = inject(DocumentsService);
-
   ngOnInit() {
-    this.documentsService
-      .getDocuments()
-      .subscribe((data) => (this.documents = data));
   }
 
   handleDocumentClick(document: DocumentIterface) {
