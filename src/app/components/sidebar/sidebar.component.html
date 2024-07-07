@@ -8,8 +8,8 @@
     <!-- document list goes here -->
     <ul id="file-list">
       @if (currDocService.documents) { @for(document of currDocService.documents; track
-      document.name){
-      <div class="document" (click)="handleDocumentClick(document)">
+      document.name; let i = $index){
+      <div class="document" (click)="handleDocumentClick(currDocService.documents[currDocService.documents.length - 1 -i])">
         <svg
           width="14"
           height="16"
@@ -26,8 +26,8 @@
         </svg>
 
         <li>
-          <p>{{ document.createdAt }}</p>
-          <h3 class="doc-name">{{ document.name }}</h3>
+          <p>{{ currDocService.documents[currDocService.documents.length - 1-i].createdAt }}</p>
+          <h3 class="doc-name">{{ currDocService.documents[currDocService.documents.length - 1-i].name }}</h3>
         </li>
       </div>
       } }
