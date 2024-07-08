@@ -1,27 +1,31 @@
-# MarkdownEditor
+# Introduction
+The In-Browser Markdown Editor is a web application that allows users to create, edit, and preview markdown documents directly in their browser. This application is built with Angular 17 and provides a seamless user experience for markdown editing with real-time preview functionality.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+# Features
+Markdown Editing: Create and edit markdown documents with ease.
+Real-Time Preview: See the rendered markdown as you type.
+Responsive Design: Works on both desktop and mobile devices.
+Document Management: Save, rename, and delete markdown documents.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# ROLES
 
-## Code scaffolding
+### Silas Owu
+Silas developed the "create new document" feature and the sidebar.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Samuel Larbi Danquah and Harriet Buadee
+Samuel and Harriet collaborated on the toolbar. Harriet focused on the desktop view, while Samuel concentrated on the mobile view. Together, they implemented functionality for deleting documents, saving changes after markdown edits, and renaming documents.
 
-## Build
+## Emmanuel Adomako
+Emmanuel developed the preview feature for the markdown, ensuring it displays correctly when text is present.
+ 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Nana Kojo Akyin Abruquah
+Nana enhanced the application by implementing the markdown feature and ensuring responsiveness for both the preview and markdown components.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Prince Emmanuel Biney
+Prince implemented a theme-switching feature, allowing users to select either a light or dark theme based on their preference.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
