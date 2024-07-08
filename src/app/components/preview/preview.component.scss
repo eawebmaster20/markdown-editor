@@ -1,7 +1,6 @@
 .preview-container {
   border-left: solid 1px var(--slate-300);
   height: 100%;
-  // width: 100%;
 }
 
 .markdown-bar {
@@ -10,8 +9,11 @@
   border-left: solid 1px var(--slate-300);
   height: 42px;
   align-items: center;
-  font-family: Roboto, "Sans-serif";
-  padding: 0 20px;
+  background: var(--slate-200);
+}
+
+.preview-bar button{
+  transition: .4s;
 }
 
 .markdown-bar p {
@@ -22,17 +24,13 @@
 }
 
 .preview {
-  // padding: 22px 23px;
   padding: 10px 20px 30px 20px;
-
-  // border: solid 1px pink;
   height: 100%;
   max-width: 672px;
   width: 100%;
   margin: 0 auto;
   overflow-y: scroll;
   max-height: 84vh;
-  // background: blue;
 }
 
 
@@ -52,4 +50,19 @@ svg path {
 
 .toggle-preview:hover svg path {
   fill: var(--orange-accent);
+}
+
+
+// Media Queries
+
+@media only screen and (max-width: 700px) {
+  .preview {
+    width: 672px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .preview {
+    width: 360px;
+  }
 }

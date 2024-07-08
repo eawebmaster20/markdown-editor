@@ -132,3 +132,9 @@ nav {
     display: none;
   }
 }
+
+@media only screen and (max-width: 360px){
+  nav{
+    width: 360px;
+  }
+}

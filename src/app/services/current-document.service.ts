@@ -41,14 +41,12 @@ export class CurrentDocumentService{
   }
 
   saveDocumentChange(){
-    this.documents[this.documents.length -1] = this.currDocument
     localStorage.setItem('docList',JSON.stringify(this.documents));
   }
 
   addDocument(newDocument: DocumentIterface) {
     newDocument.createdAt = this.documentService.generateDate();
     this.documents.push(newDocument);
-    this.currDocument.name= ''
     localStorage.setItem('docList', JSON.stringify(this.documents));
     this.currDocument = this.documents[this.documents.length - 1]
     this.updateText();

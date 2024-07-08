@@ -21,7 +21,4 @@ export class PreviewComponent {
   toggleVisible() {
     this.toggleService.Visible = !this.toggleService.Visible; 
   }
-
-  ngOnInit() {
-  }
 }
