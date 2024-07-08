@@ -16,40 +16,40 @@ export class CurrentDocumentService{
   updateText() {
     this.currDocument.renderedText = marked.parse(this.currDocument.content);
   }
+
   setCurrDocument(document: DocumentIterface) {
     this.currDocument = document;
     this.updateText()
   }
+
   deleteCurrDocument() {
     this.documents.splice(this.documents.indexOf(this.currDocument), 1)
     this.currDocument = this.documents[this.documents.length-1]
     localStorage.setItem('docList', JSON.stringify(this.documents));
     this.updateText();
   }
+
   renameDoc(newName: any){
     console.log(
-      newName.target.innerText
-      
+      newName.target.innerText  
     )
     this.currDocument.name= newName.target.innerText
   }
+
   editName(){
     this.inEditMode = !this.inEditMode;
   }
 
- saveDocumentChange(){
-  this.documents[this.documents.length -1] = this.currDocument
-  console.log((this.documents));
-   localStorage.setItem('docList',JSON.stringify(this.documents));
-   console.log(this.documents);
- }
+  saveDocumentChange(){
+    this.documents[this.documents.length -1] = this.currDocument
+    localStorage.setItem('docList',JSON.stringify(this.documents));
+  }
 
- addDocument(newDocument: DocumentIterface) {
-  newDocument.createdAt = this.documentService.generateDate();
-  this.documents.push(newDocument);
-  localStorage.setItem('docList', JSON.stringify(this.documents));
-  this.currDocument = this.documents[this.documents.length - 1]
+  addDocument(newDocument: DocumentIterface) {
+    newDocument.createdAt = this.documentService.generateDate();
+    this.documents.push(newDocument);
+    localStorage.setItem('docList', JSON.stringify(this.documents));
+    this.currDocument = this.documents[this.documents.length - 1]
     this.updateText();
-}
-
+  }
 }
