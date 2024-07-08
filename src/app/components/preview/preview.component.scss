@@ -7,6 +7,7 @@
 .markdown-bar {
   display: flex;
   width: 100%;
+  border-left: solid 1px var(--slate-300);
   height: 42px;
   align-items: center;
   background: var(--slate-200);
