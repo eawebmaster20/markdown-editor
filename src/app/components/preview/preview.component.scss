@@ -1,5 +1,8 @@
 .preview-container {
   border-left: solid 1px var(--slate-300);
+  resize: horizontal;
+  overflow: auto;
+  box-sizing: border-box;
   height: 100%;
   // width: 100%;
 }
