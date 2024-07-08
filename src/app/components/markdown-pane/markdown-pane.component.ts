@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { DocumentsService } from '../../services/documents.service';
 import { PreviewTogglerService } from '../../services/preview-toggler.service';
 import { CurrentDocumentService } from '../../services/current-document.service';
-import { DocumentIterface } from '../interfaces/document';
+// import { DocumentIterface } from '../interfaces/document';
 
 @Component({
   selector: 'app-markdown-pane',
@@ -16,6 +16,8 @@ export class MarkdownPaneComponent {
   documentService = inject(DocumentsService);
   toggleService = inject(PreviewTogglerService);
   currDocService = inject(CurrentDocumentService);
-  ngOnInit() {
+
+  toggleVisible() {
+    this.toggleService.Visible = !this.toggleService.Visible; 
   }
 }
