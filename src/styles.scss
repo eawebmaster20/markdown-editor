@@ -201,7 +201,11 @@ input {
 
 
   
-
+  .preview-container {
+    border-left: solid 1px var(--slate-600);
+    height: 100%;
+    // width: 100%;
+  }
   .markdown-bar {
     display: flex;
     width: 100%;
@@ -241,6 +245,12 @@ input {
 
 //Dark theme ends here
 
+
+.preview-container {
+  border-left: solid 1px var(--slate-300);
+  height: 100%;
+  // width: 100%;
+}
 
 
 .del-modal {
