@@ -221,6 +221,7 @@ input {
   }
 
 
+
 }
 
 
@@ -270,8 +271,6 @@ input {
   padding: 0 20px;
 }
 
-.preview-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+div.markdown-bar .preview-bar {
+  background-color: green;
 }
