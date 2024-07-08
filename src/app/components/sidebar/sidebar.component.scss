@@ -49,6 +49,8 @@ aside {
     display: flex;
     flex-direction: column;
     row-gap: 1.25rem;
+    overflow-y: scroll;
+    height: 18rem;
 
     div {
       width: 100%;
@@ -87,4 +89,14 @@ app-theme-toggler {
   position: absolute;
   bottom: 10px;
   left: 24px;
+}
+
+
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
