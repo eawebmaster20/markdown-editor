@@ -167,3 +167,66 @@ input {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 } 
+
+.dark-theme {
+  .del-modal {
+    background-color: var(--slate-1000);
+    padding: 24px;
+    width: 343px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    box-shadow: 0 0 3px gray;
+    //   display: none;
+
+
+    
+  }
+
+
+  .content {
+    font-family: "Roboto mono", "Sans-serif";
+    color: var(--slate-400);
+    background: var(--slate-1000);
+    font-size: 12px;
+    width: 100%;
+    max-width: 672px;
+    height: 100%;
+    letter-spacing: 0px;
+    padding: 10px 20px;
+    border: none;
+    resize: none;
+  }
+  
+}
+
+
+.del-modal {
+  background-color: var(--slate-100);
+  padding: 24px;
+  width: 343px;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  //   display: none;
+}
+
+
+.content {
+  font-family: "Roboto mono", "Sans-serif";
+  color: var(--slate-700);
+  font-size: 12px;
+  width: 100%;
+  max-width: 672px;
+  height: 100%;
+  letter-spacing: 0px;
+  padding: 10px 20px;
+  border: none;
+  resize: none;
+}
