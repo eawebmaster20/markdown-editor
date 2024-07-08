@@ -230,7 +230,8 @@ input {
   .preview h5 {
     color: var(--slate-100);
   }
-  .preview p {
+  .preview p,
+  .preview li {
     color: var(--slate-400);
   }
   .preview blockquote p,
