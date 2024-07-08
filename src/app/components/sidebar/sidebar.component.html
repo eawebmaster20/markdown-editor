@@ -27,7 +27,7 @@
 
         <li>
           <p>{{ currDocService.documents[currDocService.documents.length - 1-i].createdAt }}</p>
-          <h3 class="doc-name">{{ currDocService.documents[currDocService.documents.length - 1-i].name }}</h3>
+          <h3 class="doc-name">{{ currDocService.documents[currDocService.documents.length - 1-i].name || 'untitled document' }}</h3>
         </li>
       </div>
       } }

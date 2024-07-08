@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { CreateModalService } from '../../services/create-modal.service';
 import { DocumentsService } from '../../services/documents.service';
 import { DocumentIterface } from '../interfaces/document';
@@ -10,30 +10,38 @@ import { CurrentDocumentService } from '../../services/current-document.service'
   standalone: true,
   imports: [FormsModule],
   templateUrl: './create-modal.component.html',
-  styleUrl: './create-modal.component.scss'
+  styleUrls: ['./create-modal.component.scss']
 })
 
 export class CreateModalComponent {
-  createModalService = inject(CreateModalService)
-  currDocService = inject(CurrentDocumentService)
+  createModalService = inject(CreateModalService);
+  currDocService = inject(CurrentDocumentService);
+  disabled: boolean = false;
 
   newDocument: DocumentIterface = {
     createdAt: '',
-    name: 'untitled-document.md',
+    name: '',
     content: '',
     renderedText: ''
   };
 
   createDocument() {
-    this.currDocService.addDocument(this.newDocument);
-    this.newDocument = {
-      createdAt : '',
-      name:'untitled-document.md',
-      content:'',
-      renderedText:''
+    if (this.newDocument.name.trim() !== '') {
+      this.currDocService.addDocument(this.newDocument);
+      this.newDocument = {
+        createdAt: '',
+        name: '',
+        content: '',
+        renderedText: ''
+      };
+      this.createModalService.hideModal();
+      this.disabled = false; // Reset disabled state
+    } else {
+      this.disabled = true;
     }
-    this.createModalService.hideModal()
   }
 
-
+  validateInput() {
+    this.disabled = this.newDocument.name.trim() === '';
+  }
 }

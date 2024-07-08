@@ -1,7 +1,7 @@
-<div class="create-modal" (click)="createModalService.hideModal()"  [style]="{ display: createModalService.isDisplay ? 'block' : 'none'}"></div>
+<div class="create-modal" (click)="createModalService.hideModal()" [style]="{ display: createModalService.isDisplay ? 'block' : 'none'}"></div>
 
 <section [style]="{ display: createModalService.isDisplay ? 'flex' : 'none'}">
     <label for="input-name">Name</label>
-    <input type="text" class="input-name" [(ngModel)]="newDocument.name" placeholder="Enter document name"/>
-    <button id="create-doc-btn" (click)="createDocument()">create document</button>
+    <input type="text" class="input-name" [(ngModel)]="newDocument.name" placeholder="Enter document name" (ngModelChange)="validateInput()"/>
+    <button id="create-doc-btn" [style]="{'background-color': disabled ? '#a90341' : 'var(--orange-accent)'}" (click)="createDocument()">Create Document</button>
 </section>
