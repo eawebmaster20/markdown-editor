@@ -1,8 +1,5 @@
 .preview-container {
   border-left: solid 1px var(--slate-300);
-  resize: horizontal;
-  overflow: auto;
-  box-sizing: border-box;
   height: 100%;
 }
 
@@ -12,10 +9,7 @@
   border-left: solid 1px var(--slate-300);
   height: 42px;
   align-items: center;
-
   background: var(--slate-200);
-  font-family: Roboto, "Sans-serif";
-  padding: 0 20px;
 }
 
 .preview-bar button{
@@ -39,11 +33,7 @@
   max-height: 84vh;
 }
 
-.preview-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 .toggle-preview {
   display: flex;
