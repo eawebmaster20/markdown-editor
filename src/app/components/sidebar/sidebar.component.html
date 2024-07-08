@@ -10,7 +10,7 @@
       @if (currDocService.documents) { @for(document of currDocService.documents; track
       document.name; let i = $index){
       <div class="document" (click)="handleDocumentClick(currDocService.documents[currDocService.documents.length - 1 -i])">
-        <svg
+        <svg 
           width="14"
           height="16"
           viewBox="0 0 14 16"
@@ -27,7 +27,7 @@
 
         <li>
           <p>{{ currDocService.documents[currDocService.documents.length - 1-i].createdAt }}</p>
-          <h3 class="doc-name">{{ currDocService.documents[currDocService.documents.length - 1-i].name }}</h3>
+          <h3 class="doc-name">{{ currDocService.documents[currDocService.documents.length - 1-i].name || 'untitled document' }}</h3>
         </li>
       </div>
       } }

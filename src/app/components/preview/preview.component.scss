@@ -1,8 +1,13 @@
-
+.preview-container {
+  border-left: solid 1px var(--slate-300);
+  height: 100%;
+  // width: 100%;
+}
 
 .markdown-bar {
   display: flex;
   width: 100%;
+  border-left: solid 1px var(--slate-300);
   height: 42px;
   align-items: center;
   font-family: Roboto, "Sans-serif";
