@@ -1,3 +1,4 @@
+
 # Introduction
 The In-Browser Markdown Editor is a web application that allows users to create, edit, and preview markdown documents directly in their browser. This application is built with Angular 17 and provides a seamless user experience for markdown editing with real-time preview functionality.
 
@@ -10,10 +11,10 @@ Document Management: Save, rename, and delete markdown documents.
 
 # ROLES
 
-### Silas Owu
+## Silas Owu
 Silas developed the "create new document" feature and the sidebar.
 
-# Samuel Larbi Danquah and Harriet Buadee
+## Samuel Larbi Danquah and Harriet Buadee
 Samuel and Harriet collaborated on the toolbar. Harriet focused on the desktop view, while Samuel concentrated on the mobile view. Together, they implemented functionality for deleting documents, saving changes after markdown edits, and renaming documents.
 
 ## Emmanuel Adomako
@@ -26,6 +27,5 @@ Nana enhanced the application by implementing the markdown feature and ensuring 
 
 ## Prince Emmanuel Biney
 Prince implemented a theme-switching feature, allowing users to select either a light or dark theme based on their preference.
-
 
 
