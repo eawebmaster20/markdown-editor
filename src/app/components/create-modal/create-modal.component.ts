@@ -35,7 +35,7 @@ export class CreateModalComponent {
         renderedText: ''
       };
       this.createModalService.hideModal();
-      this.disabled = false; // Reset disabled state
+      this.disabled = false; 
     } else {
       this.disabled = true;
     }
